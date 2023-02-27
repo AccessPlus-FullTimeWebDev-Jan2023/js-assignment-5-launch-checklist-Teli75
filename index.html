@@ -10,9 +10,11 @@
     <body>
         <h1>Launch Checklist Form</h1>
         <div id="missionTarget" data-testid="missionTarget">
+            <!--mission target identifies this html element. "data-testid" is used for testing purposes-->
             <!-- Fetch some planetary data -->
         </div>  
         <div id="launchForm">
+            <!--the id attribute for this element is launchForm-->
             <form data-testid="testForm">
                 <div class="formField">
                     <label>Pilot Name <input type="text" name="pilotName" id="pilotName"/></label>
@@ -26,12 +28,14 @@
                 <div class="formField">
                     <label>Cargo Mass (kg) <input type="text" name="cargoMass"/></label>
                 </div>
-                <button id="formSubmit">Submit</button>
+                <button id="formSubmit" type="submit">Submit</button>
             </form>
         </div>
         <div id="launchStatusCheck">
             <h2 id="launchStatus" data-testid="launchStatus">Awaiting Information Before Launch</h2>
+            
             <div  id="faultyItems" data-testid="faultyItems">
+                <!-- update faultyItems if something not ready for launch -->
                 <ol>
                     <li id="pilotStatus" data-testid="pilotStatus">Pilot Ready</li>
                     <li id="copilotStatus" data-testid="copilotStatus">Co-pilot Ready</li>
