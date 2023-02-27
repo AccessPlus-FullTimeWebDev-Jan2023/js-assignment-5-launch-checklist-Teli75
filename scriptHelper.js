@@ -30,7 +30,7 @@ function validateInput(testInput) {
     }
 }
 
-function formSubmission(document, faultyItems, pilot, copilot, fuelLevel, cargoLevel) {
+function formSubmission(document, faultyItems, pilot, copilot, fuelLevel, cargoLevel, launchStatus, pilotStatus, copilotStatus, fuelStatus, cargoStatus) {
 
     if (validateInput(pilot) === "empty" || validateInput(copilot) === "empty" || validateInput(fuelLevel) === "empty" || validateInput(cargoLevel) === "Empty") {
         alert("All fields are required");
@@ -39,7 +39,6 @@ function formSubmission(document, faultyItems, pilot, copilot, fuelLevel, cargoL
     } else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number") {
         alert("Make sure to enter valid information for each field");
     } else {
-        let faultyItems = document.getElementById("faultyItems");
 
         if (Number(fuelLevel) < 10000 || Number(cargoLevel) > 10000) {
         faultyItems.style.visibility = "visible";
@@ -55,7 +54,7 @@ function formSubmission(document, faultyItems, pilot, copilot, fuelLevel, cargoL
             }
         } else {
             launchStatus.style.color = "green";
-            launchStatus.innerHTML = "Shuttle is ready for launch";
+            launchStatus.innerHTML = "Shuttle is Ready for launch";
             faultyItems.style.visibility ='visible';
             pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
             copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
@@ -63,12 +62,6 @@ function formSubmission(document, faultyItems, pilot, copilot, fuelLevel, cargoL
         }
     }
 }
-
-    
-
-
-//    //copilotStatus.innerHTML = copilot;
-//    list.children[0].children[1].innerHTML = copilot;
 
 async function myFetch() {
     //fetches a list of planets
