@@ -46,7 +46,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     } else {
 
         if (Number(fuelLevel) < 10000 || Number(cargoLevel) > 10000) {
-        faultyItems.style.visibility = "visible";
+        list.style.visibility = "visible";
         launchStatus.style.color = "red";
         launchStatus.innerHTML = "Shuttle is not ready for launch";
         pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
@@ -60,7 +60,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         } else {
             launchStatus.style.color = "green";
             launchStatus.innerHTML = "Shuttle is Ready for launch";
-            faultyItems.style.visibility ='visible';
+            list.style.visibility ='visible';
             pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
             copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
 
