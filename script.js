@@ -17,6 +17,10 @@ let listedPlanetsResponse = myFetch();
    })
 
    let form = document.querySelector("form");
+   let list = document.getElementById("faultyItems");
+   list.style.visibility = "hidden";
+
+   
    form.addEventListener("submit", function(event){
     event.preventDefault();
    let pilot = document.querySelector("input[name=pilotName]").value;
@@ -24,8 +28,7 @@ let listedPlanetsResponse = myFetch();
    let fuelLevel = document.querySelector("input[name=fuelLevel]").value;
    let cargoLevel = document.querySelector("input[name=cargoMass]").value;
    
-   let list = document.getElementById("faultyItems");
-   list.style.visibility = "hidden";
+
    
 
     formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel,);
