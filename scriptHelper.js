@@ -9,7 +9,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
     `
                 <h2>Mission Destination</h2>
                 <ol>
-                    <li>Name: star </li>
+                    <li>Name: ${star} </li>
                     <li>Diameter: ${diameter} </li>
                     <li>Star: ${star}</li>
                     <li>Distance from Earth: ${distance} </li>
@@ -30,8 +30,13 @@ function validateInput(testInput) {
     }
 }
 
-function formSubmission(document, faultyItems, pilot, copilot, fuelLevel, cargoLevel, launchStatus, pilotStatus, copilotStatus, fuelStatus, cargoStatus) {
-
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+    let launchStatus = document.getElementById("launchStatus");
+    let pilotStatus = document.getElementById("pilotStatus");
+    let copilotStatus = document.getElementById("copilotStatus");
+    let fuelStatus = document.getElementById("fuelStatus");
+    let cargoStatus = document.getElementById("cargoStatus");
+ 
     if (validateInput(pilot) === "empty" || validateInput(copilot) === "empty" || validateInput(fuelLevel) === "empty" || validateInput(cargoLevel) === "Empty") {
         alert("All fields are required");
     } else if (validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Not a Number"){

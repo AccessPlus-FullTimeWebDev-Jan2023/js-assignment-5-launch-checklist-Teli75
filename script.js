@@ -23,14 +23,11 @@ let listedPlanetsResponse = myFetch();
    let copilot = document.querySelector("input[name=copilotName]").value;
    let fuelLevel = document.querySelector("input[name=fuelLevel]").value;
    let cargoLevel = document.querySelector("input[name=cargoMass]").value;
-   let faultyItems = document.getElementById("faultyItems");
-   let launchStatus = document.getElementById("launchStatus");
-   let pilotStatus = document.getElementById("pilotStatus");
-   let copilotStatus = document.getElementById("copilotStatus");
-   let fuelStatus = document.getElementById("fuelStatus");
-   let cargoStatus = document.getElementById("cargoStatus");
+   
+   let list = document.getElementById("faultyItems");
+   list.style.visibility = "hidden";
+   
 
-
-    formSubmission(document, faultyItems, pilot, copilot, fuelLevel, cargoLevel, launchStatus, pilotStatus, copilotStatus, fuelStatus, cargoStatus);
+    formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel,);
    })
 });
